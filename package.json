@@ -1,0 +1,60 @@
+{
+  "name": "@depixy/storage",
+  "version": "2.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "tsc",
+    "lint": "eslint --ext .ts src",
+    "test": "mocha"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "keywords": [
+    "depixy",
+    "depixy-plugin"
+  ],
+  "homepage": "https://github.com/depixy/storage#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/depixy/storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/depixy/storage/issues"
+  },
+  "author": "Joshua Avalon",
+  "license": "Apache-2.0",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "dependencies": {
+    "fastify-plugin": "^3.0.1",
+    "minio": "^7.0.28"
+  },
+  "devDependencies": {
+    "@joshuaavalon/eslint-config-typescript": "^6.1.4",
+    "@types/chai": "^4.3.1",
+    "@types/minio": "^7.0.13",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "eslint": "^8.17.0",
+    "fastify": "^4.0.1",
+    "mocha": "^10.0.0",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.3"
+  }
+}
