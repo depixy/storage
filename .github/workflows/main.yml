@@ -1,0 +1,46 @@
+name: main
+on:
+  - push
+  - pull_request
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run lint
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    services:
+      minio:
+        image: bitnami/minio
+        env:
+          MINIO_DEFAULT_BUCKETS: depixy
+          MINIO_ROOT_USER: minio
+          MINIO_ROOT_PASSWORD: minio123
+        options: >-
+          --health-cmd "curl -f http://localhost:9000/minio/health/live"
+          --health-interval 30s
+          --health-timeout 20s
+          --health-retries 3
+        ports:
+          - 9000:9000
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test
+      - uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: test report
+          path: report/mocha.json
+          reporter: mocha-json
