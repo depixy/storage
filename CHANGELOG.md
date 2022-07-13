@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/depixy/storage/compare/v2.0.0...v2.0.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* EngineHandler miss StorageEngine ([e47e770](https://github.com/depixy/storage/commit/e47e770bcb42335b7a398076a7f806953fea850c))
+
 ## [2.0.0](https://github.com/depixy/storage/compare/v2.0.0...v2.0.0) (2022-07-13)
 
 
