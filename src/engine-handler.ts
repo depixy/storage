@@ -1,11 +1,24 @@
+import type { Readable } from "stream";
 import type { StorageEngine } from "./engine/index.js";
 
-export class EngineHandler {
+export class EngineHandler implements StorageEngine {
   private readonly engines: Record<string, StorageEngine>;
   private key?: string;
 
   constructor() {
     this.engines = {};
+  }
+
+  get(key: string): Promise<Readable> {
+    return this.getEngine().get(key);
+  }
+
+  set(key: string, stream: Readable): Promise<void> {
+    return this.getEngine().set(key, stream);
+  }
+
+  exist(key: string): Promise<boolean> {
+    return this.getEngine().exist(key);
   }
 
   use(key: string): void {
