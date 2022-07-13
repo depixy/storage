@@ -1,5 +1,5 @@
-import { accessSync, constants, existsSync } from "fs";
-import { writeFile } from "fs/promises";
+import { accessSync, constants } from "fs";
+import { access, writeFile } from "fs/promises";
 import { createReadStream } from "fs";
 import { join, normalize } from "path";
 
@@ -16,10 +16,6 @@ export class LocalEngine implements StorageEngine {
   constructor(opts: LocalEngineOptions) {
     const { path } = opts;
     this.path = path;
-    const exists = existsSync(path);
-    if (!exists) {
-      throw new Error(`${path} does not exists`);
-    }
     try {
       accessSync(path, constants.R_OK | constants.W_OK);
     } catch (e) {
@@ -42,5 +38,15 @@ export class LocalEngine implements StorageEngine {
   async set(key: string, stream: Readable): Promise<void> {
     const absPath = this.getPath(key);
     await writeFile(absPath, stream);
+  }
+
+  async exist(key: string): Promise<boolean> {
+    const absPath = this.getPath(key);
+    try {
+      await access(absPath, constants.R_OK);
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }

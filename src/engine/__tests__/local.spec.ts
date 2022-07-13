@@ -38,4 +38,16 @@ describe("LocalEngine", () => {
       assert.strictEqual(data, "test", "data should be equal");
     });
   });
+
+  describe("#exist()", () => {
+    it("should return true", async () => {
+      const exist = await engine.exist("key");
+      assert.isTrue(exist, "key should be exist");
+    });
+
+    it("should return false", async () => {
+      const exist = await engine.exist("key2");
+      assert.isFalse(exist, "key should be exist");
+    });
+  });
 });

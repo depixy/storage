@@ -25,4 +25,13 @@ export class S3Engine implements StorageEngine {
   async set(key: string, stream: Readable): Promise<void> {
     await this.client.putObject(this.bucket, key, stream);
   }
+
+  async exist(key: string): Promise<boolean> {
+    try {
+      await this.client.statObject(this.bucket, key);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
