@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/depixy/storage/compare/v2.1.0...v2.1.1) (2022-07-15)
+
+
+### Bug Fixes
+
+* mkdir mod ([77e56ea](https://github.com/depixy/storage/commit/77e56ea7b7fb0b90a748a0c81c26ec99007c1cfb))
+
 ## [2.1.0](https://github.com/depixy/storage/compare/v2.0.1...v2.1.0) (2022-07-15)
 
 
