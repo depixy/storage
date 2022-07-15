@@ -1,7 +1,7 @@
 import { accessSync, constants } from "fs";
-import { access, writeFile } from "fs/promises";
+import { access, mkdir, writeFile } from "fs/promises";
 import { createReadStream } from "fs";
-import { join, normalize } from "path";
+import { dirname, join, normalize } from "path";
 
 import type { Readable } from "stream";
 import type { StorageEngine } from "./type.js";
@@ -37,6 +37,8 @@ export class LocalEngine implements StorageEngine {
 
   async set(key: string, stream: Readable): Promise<void> {
     const absPath = this.getPath(key);
+    const parent = dirname(absPath);
+    await mkdir(parent, { recursive: true, mode: 0o644 });
     await writeFile(absPath, stream);
   }
 

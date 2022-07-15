@@ -27,13 +27,13 @@ describe("LocalEngine", () => {
       const stream = new Readable();
       stream.push("test");
       stream.push(null);
-      engine.set("key", stream);
+      engine.set("upload/key", stream);
     });
   });
 
   describe("#get()", () => {
     it("should get data", async () => {
-      const stream = await engine.get("key");
+      const stream = await engine.get("upload/key");
       const data = await stream2string(stream);
       assert.strictEqual(data, "test", "data should be equal");
     });
@@ -41,12 +41,12 @@ describe("LocalEngine", () => {
 
   describe("#exist()", () => {
     it("should return true", async () => {
-      const exist = await engine.exist("key");
+      const exist = await engine.exist("upload/key");
       assert.isTrue(exist, "key should be exist");
     });
 
     it("should return false", async () => {
-      const exist = await engine.exist("key2");
+      const exist = await engine.exist("key");
       assert.isFalse(exist, "key should be exist");
     });
   });
