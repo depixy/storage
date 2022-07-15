@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/depixy/storage/compare/v2.0.1...v2.1.0) (2022-07-15)
+
+
+### Features
+
+* handle slash key in LocalEngine ([3df1b83](https://github.com/depixy/storage/commit/3df1b8397a071e25766e4f30b7091cf628cc2aee))
+* new storage structure ([45c0caf](https://github.com/depixy/storage/commit/45c0caf01629a60d93a23f472e67213d63aa9290))
+
 ## [2.0.1](https://github.com/depixy/storage/compare/v2.0.0...v2.0.1) (2022-07-13)
 
 
