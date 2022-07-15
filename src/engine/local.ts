@@ -38,7 +38,7 @@ export class LocalEngine implements StorageEngine {
   async set(key: string, stream: Readable): Promise<void> {
     const absPath = this.getPath(key);
     const parent = dirname(absPath);
-    await mkdir(parent, { recursive: true, mode: 0o644 });
+    await mkdir(parent, { recursive: true });
     await writeFile(absPath, stream);
   }
 
