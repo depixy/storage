@@ -19,3 +19,8 @@ export interface LocalStorageOptions {
 }
 
 export type StorageOptions = S3StorageOptions | LocalStorageOptions;
+export type {
+  LocalEngineOptions,
+  S3EngineOptions,
+  StorageEngine
+} from "./engine/index.js";
