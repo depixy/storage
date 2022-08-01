@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/depixy/storage/compare/v2.2.0...v2.2.1) (2022-08-01)
+
+
+### Bug Fixes
+
+* add engine types ([b911833](https://github.com/depixy/storage/commit/b911833c48b2157bb37fa5ff883e55b84429acae))
+
 ## [2.2.0](https://github.com/depixy/storage/compare/v2.1.1...v2.2.0) (2022-08-01)
 
 
