@@ -1,22 +1,11 @@
 import { default as fastifyPlugin } from "fastify-plugin";
 import { LocalEngine, S3Engine } from "./engine/index.js";
 
-import type { LocalEngineOptions, S3EngineOptions } from "./engine/index.js";
-import type { Storage } from "./storage.js";
-
-export interface S3StorageOptions {
-  type: "s3";
-  opts: S3EngineOptions;
-}
-
-export interface LocalStorageOptions {
-  type: "local";
-  opts: LocalEngineOptions;
-}
+import type { Storage, StorageOptions } from "./storage.js";
 
 export interface DepixyStorageOptions {
   storages: {
-    [key: string]: S3StorageOptions | LocalStorageOptions;
+    [key: string]: StorageOptions;
   };
 }
 
