@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/depixy/storage/compare/v2.1.1...v2.2.0) (2022-08-01)
+
+
+### Features
+
+* add StorageOptions ([5bd7340](https://github.com/depixy/storage/commit/5bd7340708825e16ef51ddc08325af5870de5be7))
+
 ## [2.1.1](https://github.com/depixy/storage/compare/v2.1.0...v2.1.1) (2022-07-15)
 
 
