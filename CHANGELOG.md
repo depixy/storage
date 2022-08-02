@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/depixy/storage/compare/v2.2.1...v2.3.0) (2022-08-02)
+
+
+### Features
+
+* add remove ([d9f7444](https://github.com/depixy/storage/commit/d9f74444d6276a68519813dd76e3116119bbc716))
+
 ## [2.2.1](https://github.com/depixy/storage/compare/v2.2.0...v2.2.1) (2022-08-01)
 
 
