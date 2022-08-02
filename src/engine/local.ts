@@ -1,5 +1,5 @@
 import { accessSync, constants } from "fs";
-import { access, mkdir, writeFile } from "fs/promises";
+import { access, mkdir, stat, unlink, writeFile } from "fs/promises";
 import { createReadStream } from "fs";
 import { dirname, join, normalize } from "path";
 
@@ -50,5 +50,14 @@ export class LocalEngine implements StorageEngine {
     } catch (e) {
       return false;
     }
+  }
+
+  async remove(key: string): Promise<void> {
+    const absPath = this.getPath(key);
+    const stats = await stat(absPath);
+    if (!stats.isFile()) {
+      return;
+    }
+    await unlink(absPath);
   }
 }

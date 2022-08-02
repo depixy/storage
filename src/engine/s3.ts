@@ -34,4 +34,8 @@ export class S3Engine implements StorageEngine {
       return false;
     }
   }
+
+  async remove(key: string): Promise<void> {
+    await this.client.removeObject(this.bucket, key);
+  }
 }
