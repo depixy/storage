@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/depixy/storage/compare/v3.0.0...v3.0.1) (2022-11-04)
+
+
+### Bug Fixes
+
+* export base type ([24cb578](https://github.com/depixy/storage/commit/24cb57863c457c43c82bf7507a554e908dd6482c))
+
 ## [3.0.0](https://github.com/depixy/storage/compare/v2.3.0...v3.0.0) (2022-11-04)
 
 
