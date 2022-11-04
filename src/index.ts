@@ -1,5 +1,2 @@
-import { plugin } from "./plugin.js";
-export type { DepixyStorageOptions } from "./plugin.js";
-export default plugin;
-
-export * from "./storage.js";
+export * from "./s3";
+export * from "./local";

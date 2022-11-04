@@ -4,11 +4,6 @@
 
 Storage plugin for [Depixy][depixy]. It is included in Depixy.
 
-## Requirements
-
-- @depixy/database
-- @depixy/auth
-
 ## Options
 
 See `DepixyStorageOptions`.

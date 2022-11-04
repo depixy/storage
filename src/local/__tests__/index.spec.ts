@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { Readable } from "stream";
 import { mkdir } from "fs/promises";
-import { LocalEngine } from "../local.js";
+import { LocalStorage } from "../";
 
 import type { Stream } from "stream";
 
@@ -14,12 +14,12 @@ async function stream2string(stream: Stream): Promise<string> {
   });
 }
 
-describe("LocalEngine", () => {
-  let engine: LocalEngine;
+describe("LocalStorage", () => {
+  let engine: LocalStorage;
 
   before(async () => {
     await mkdir("./tmp");
-    engine = new LocalEngine({ path: "./tmp" });
+    engine = new LocalStorage({ path: "./tmp" });
   });
 
   describe("#set()", () => {

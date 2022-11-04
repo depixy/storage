@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { Readable } from "stream";
-import { S3Engine } from "../s3.js";
+import { S3Storage } from "../";
 
 import type { Stream } from "stream";
 
@@ -13,11 +13,11 @@ async function stream2string(stream: Stream): Promise<string> {
   });
 }
 
-describe("S3Engine", () => {
-  let engine: S3Engine;
+describe("S3Storage", () => {
+  let engine: S3Storage;
 
   before(async () => {
-    engine = new S3Engine({
+    engine = new S3Storage({
       bucket: "depixy",
       endPoint: "localhost",
       useSSL: false,

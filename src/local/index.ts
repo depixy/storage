@@ -4,16 +4,16 @@ import { createReadStream } from "fs";
 import { dirname, join, normalize } from "path";
 
 import type { Readable } from "stream";
-import type { StorageEngine } from "./type.js";
+import type { Storage } from "../storage";
 
-export interface LocalEngineOptions {
+export interface LocalStorageOptions {
   path: string;
 }
 
-export class LocalEngine implements StorageEngine {
+export class LocalStorage implements Storage {
   private path: string;
 
-  constructor(opts: LocalEngineOptions) {
+  public constructor(opts: LocalStorageOptions) {
     const { path } = opts;
     this.path = path;
     try {
@@ -30,19 +30,19 @@ export class LocalEngine implements StorageEngine {
     return join(this.path, suffix);
   }
 
-  async get(key: string): Promise<Readable> {
+  public async get(key: string): Promise<Readable> {
     const absPath = this.getPath(key);
     return createReadStream(absPath);
   }
 
-  async set(key: string, stream: Readable): Promise<void> {
+  public async set(key: string, stream: Readable): Promise<void> {
     const absPath = this.getPath(key);
     const parent = dirname(absPath);
     await mkdir(parent, { recursive: true });
     await writeFile(absPath, stream);
   }
 
-  async exist(key: string): Promise<boolean> {
+  public async exist(key: string): Promise<boolean> {
     const absPath = this.getPath(key);
     try {
       await access(absPath, constants.R_OK);
@@ -52,7 +52,7 @@ export class LocalEngine implements StorageEngine {
     }
   }
 
-  async remove(key: string): Promise<void> {
+  public async remove(key: string): Promise<void> {
     const absPath = this.getPath(key);
     const stats = await stat(absPath);
     if (!stats.isFile()) {

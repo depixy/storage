@@ -1,26 +1,8 @@
-import type {
-  LocalEngineOptions,
-  S3EngineOptions,
-  StorageEngine
-} from "./engine/index.js";
+import type { Readable } from "stream";
 
 export interface Storage {
-  [key: string]: StorageEngine;
+  get: (key: string) => Promise<Readable>;
+  set: (key: string, stream: Readable) => Promise<void>;
+  exist: (key: string) => Promise<boolean>;
+  remove: (key: string) => Promise<void>;
 }
-
-export interface S3StorageOptions {
-  type: "s3";
-  opts: S3EngineOptions;
-}
-
-export interface LocalStorageOptions {
-  type: "local";
-  opts: LocalEngineOptions;
-}
-
-export type StorageOptions = S3StorageOptions | LocalStorageOptions;
-export type {
-  LocalEngineOptions,
-  S3EngineOptions,
-  StorageEngine
-} from "./engine/index.js";
