@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/depixy/storage/compare/v2.3.0...v3.0.0) (2022-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove fastify
+
+### Features
+
+* remove fastify ([37147d6](https://github.com/depixy/storage/commit/37147d6ade0b179b107ca0e95759ede139d02e20))
+
 ## [2.3.0](https://github.com/depixy/storage/compare/v2.2.1...v2.3.0) (2022-08-02)
 
 
