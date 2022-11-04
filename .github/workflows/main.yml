@@ -38,9 +38,3 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run test
-      - uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: test report
-          path: report/mocha.json
-          reporter: mocha-json

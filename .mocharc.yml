@@ -1,5 +1,2 @@
 spec:
   - ./lib/**/__tests__/*.spec.js
-reporter: json
-reporter-option:
-  - output=report/mocha.json
