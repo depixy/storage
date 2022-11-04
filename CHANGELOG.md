@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/depixy/storage/compare/v3.0.1...v3.1.0) (2022-11-04)
+
+
+### Features
+
+* esm module ([5fbb503](https://github.com/depixy/storage/commit/5fbb503b6e1d8131fc2c15043bda2948af826939))
+
 ## [3.0.1](https://github.com/depixy/storage/compare/v3.0.0...v3.0.1) (2022-11-04)
 
 
