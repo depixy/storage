@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { Readable } from "stream";
-import { S3Storage } from "../";
+import { S3Storage } from "../index.js";
 
 import type { Stream } from "stream";
 

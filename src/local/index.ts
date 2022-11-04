@@ -4,7 +4,7 @@ import { createReadStream } from "fs";
 import { dirname, join, normalize } from "path";
 
 import type { Readable } from "stream";
-import type { Storage } from "../storage";
+import type { Storage } from "../storage.js";
 
 export interface LocalStorageOptions {
   path: string;

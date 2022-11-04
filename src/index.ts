@@ -1,3 +1,3 @@
-export * from "./s3";
-export * from "./local";
-export * from "./storage";
+export * from "./s3/index.js";
+export * from "./local/index.js";
+export * from "./storage.js";

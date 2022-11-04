@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { Readable } from "stream";
 import { mkdir } from "fs/promises";
-import { LocalStorage } from "../";
+import { LocalStorage } from "../index.js";
 
 import type { Stream } from "stream";
 

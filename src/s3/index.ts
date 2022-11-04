@@ -2,7 +2,7 @@ import { Client } from "minio";
 
 import type { Readable } from "stream";
 import type { ClientOptions } from "minio";
-import type { Storage } from "../storage";
+import type { Storage } from "../storage.js";
 
 export interface S3StorageOptions extends ClientOptions {
   bucket: string;
