@@ -32,22 +32,16 @@
   ],
   "exports": {
     ".": {
-      "require": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      }
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js"
     },
     "./s3": {
-      "require": {
-        "types": "./lib/s3/index.d.ts",
-        "default": "./lib/s3/index.js"
-      }
+      "types": "./lib/s3/index.d.ts",
+      "import": "./lib/s3/index.js"
     },
     "./local": {
-      "require": {
-        "types": "./lib/local/index.d.ts",
-        "default": "./lib/local/index.js"
-      }
+      "types": "./lib/local/index.d.ts",
+      "import": "./lib/local/index.js"
     }
   },
   "dependencies": {
